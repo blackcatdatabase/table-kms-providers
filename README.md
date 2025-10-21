@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL%208.0%2B-4479A1?logo=mysql&logoColor=white) ![License](https://img.shields.io/badge/license-BlackCat%20Proprietary-red) ![Status](https://img.shields.io/badge/status-stable-informational) ![Generated](https://img.shields.io/badge/generated-from%20schema--map-blue)
 
-> Schema package for table **kms_providers** (repo: $slug).
+> Schema package for table **kms_providers** (repo: `kms-providers`).
 
 ## Files
 ```
@@ -36,7 +36,7 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/001_table.sql
 |-------:|:-----|:----:|:--------|:------|
 | id | BIGINT UNSIGNED | — | — | AUTO_INCREMENT, PK |
 | name | VARCHAR(100) | NO | — |  |
-| provider | ENUM(''gcp'',''aws'',''azure'',''vault'') | NO | — |  |
+| provider | ENUM('gcp','aws','azure','vault') | NO | — |  |
 | location | VARCHAR(100) | YES | — |  |
 | project_tenant | VARCHAR(150) | YES | — |  |
 | created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) |  |
@@ -48,12 +48,12 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/001_table.sql
 ```mermaid
 erDiagram
   KMS_PROVIDERS {
-    BIGINT id PK
-    VARCHAR(100) name
-    ENUM(''gcp'',''aws'',''azure'',''vault'') provider
-    VARCHAR(100) location
-    VARCHAR(150) project_tenant
-    DATETIME(6) created_at
+    INT id PK
+    VARCHAR name
+    ENUM provider
+    VARCHAR location
+    VARCHAR project_tenant
+    DATETIME created_at
     BOOLEAN is_enabled
   }
 ```
