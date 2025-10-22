@@ -1,4 +1,4 @@
-<!-- Auto-generated from schema-map.psd1 @ 1e83bb6 (2025-10-21T10:18:36+02:00) -->
+<!-- Auto-generated from schema-defs.psd1 @ 0d1e984 (2025-10-21T22:04:56+02:00) -->
 # Definition – kms_providers
 
 Configured KMS providers.
@@ -6,10 +6,3 @@ Configured KMS providers.
 ## Columns
 | Column | Type | Null | Default | Description | Notes |
 |-------:|:-----|:----:|:--------|:------------|:------|
-| id | BIGINT UNSIGNED | — | — | Surrogate primary key. |  |
-| name | VARCHAR(100) | NO | — | Display name. |  |
-| provider | ENUM('gcp','aws','azure','vault') | NO | — | Provider kind. | enum: gcp, aws, azure, vault |
-| location | VARCHAR(100) | YES | — | Region or location. |  |
-| project_tenant | VARCHAR(150) | YES | — | Project/tenant id. |  |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |
-| is_enabled | BOOLEAN | NO | TRUE | Whether provider is enabled. |  |
