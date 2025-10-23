@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace BlackCat\Database\Packages\KmsProviders\Service;
 
-use BlackCat\Core\Database\Database;
+use BlackCat\Core\Database;
 use BlackCat\Database\Packages\KmsProviders\Dto\KmsProviderDto;
 use BlackCat\Database\Packages\KmsProviders\Mapper\KmsProviderDtoMapper;
 use BlackCat\Database\Packages\KmsProviders\Repository\KmsProviderRepository;
