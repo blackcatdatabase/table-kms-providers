@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\KmsProviders;
 final class Definitions {
     // --- základní metadata ---
     public static function table(): string { return 'kms_providers'; }
-    public static function contractView(): string { return 'v_kms_providers_contract'; }
+    public static function contractView(): string { return 'vw_kms_providers'; }
     /** @return string[] */
     public static function columns(): array { return [ 'id', 'name', 'provider', 'location', 'project_tenant', 'created_at', 'is_enabled' ]; }
     public static function pk(): string { return 'id'; }

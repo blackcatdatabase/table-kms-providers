@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\KmsProviders;
 /**
  * Bezpečný builder WHERE/ORDER/LIMIT.
  * - whitelist filtrů: [ 'id', 'name', 'provider', 'location', 'project_tenant', 'created_at', 'is_enabled' ]
- * - whitelist pro LIKE hledání: [ 'name', 'location', 'project_tenant' ]
+ * - whitelist pro LIKE hledání: [ 'name', 'provider', 'location', 'project_tenant' ]
  */
 final class Criteria {
     /** @var array<string,mixed> */
@@ -61,7 +61,7 @@ final class Criteria {
 
         // fulltext/LIKE (přes whitelist)
         if ($this->search !== null) {
-            $searchCols = [ 'name', 'location', 'project_tenant' ];
+            $searchCols = [ 'name', 'provider', 'location', 'project_tenant' ];
             $likeParts = [];
             foreach ($searchCols as $i=>$c) {
                 if ($c === '') continue;
