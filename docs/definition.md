@@ -1,15 +1,15 @@
-<!-- Auto-generated from schema-map.psd1 @ 6cefe8e (2025-10-22T20:27:41+02:00) -->
+<!-- Auto-generated from schema-map-postgres.psd1 @ 62c9c93 (2025-11-20T21:38:11+01:00) -->
 # Definition – kms_providers
 
-Configured KMS providers.
+Configured KMS providers. name is UNIQUE.
 
 ## Columns
 | Column | Type | Null | Default | Description | Notes |
 |-------:|:-----|:----:|:--------|:------------|:------|
-| id | BIGINT UNSIGNED | — | — | Surrogate primary key. |  |
-| name | VARCHAR(100) | NO | — | Display name. |  |
-| provider | ENUM('gcp','aws','azure','vault') | NO | — | Provider kind. | enum: gcp, aws, azure, vault |
+| id | BIGINT | — | AS | Surrogate primary key. |  |
+| name | VARCHAR(100) | NO | — | Display name (UNIQUE). |  |
+| provider | TEXT | NO | — | Provider kind. | enum: gcp, aws, azure, vault |
 | location | VARCHAR(100) | YES | — | Region or location. |  |
 | project_tenant | VARCHAR(150) | YES | — | Project/tenant id. |  |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |
+| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |
 | is_enabled | BOOLEAN | NO | TRUE | Whether provider is enabled. |  |
