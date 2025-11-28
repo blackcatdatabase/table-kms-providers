@@ -1,6 +1,7 @@
--- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
+-- Auto-generated from schema-views-postgres.psd1 (map@mtime:2025-11-27T15:36:13Z)
 -- engine: postgres
 -- table:  kms_providers
+
 -- Contract view for [kms_providers]
 CREATE OR REPLACE VIEW vw_kms_providers AS
 SELECT

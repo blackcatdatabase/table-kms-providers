@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class KmsProviderDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'project_tenant' => 'projectTenant', 'created_at' => 'createdAt', 'is_enabled' => 'isEnabled' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'name' => 'name', 'provider' => 'provider', 'location' => 'location', 'project_tenant' => 'projectTenant', 'created_at' => 'createdAt', 'is_enabled' => 'isEnabled' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [ 'is_enabled' ];
