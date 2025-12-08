@@ -1,0 +1,48 @@
+# kms_providers
+
+Configured KMS providers. name is UNIQUE.
+
+## Columns
+| Column | Type | Null | Default | Description |
+| --- | --- | --- | --- | --- |
+| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
+| id | BIGINT | NO |  | Surrogate primary key. |
+| is_enabled | BOOLEAN | NO | TRUE | Whether provider is enabled. |
+| location | VARCHAR(100) | YES |  | Region or location. |
+| name | VARCHAR(100) | NO |  | Display name (UNIQUE). |
+| project_tenant | VARCHAR(150) | YES |  | Project/tenant id. |
+| provider | TEXT | NO |  | Provider kind. (enum: gcp, aws, azure, vault) |
+
+## Engine Details
+
+### mysql
+
+Unique keys:
+| Name | Columns |
+| --- | --- |
+| ux_kms_providers_name | name |
+
+Indexes:
+| Name | Columns | SQL |
+| --- | --- | --- |
+| ux_kms_providers_name | name | CREATE UNIQUE INDEX ux_kms_providers_name ON kms_providers (name) |
+
+### postgres
+
+Unique keys:
+| Name | Columns |
+| --- | --- |
+| ux_kms_providers_name | name |
+
+Indexes:
+| Name | Columns | SQL |
+| --- | --- | --- |
+| ux_kms_providers_name | name | CREATE UNIQUE INDEX IF NOT EXISTS ux_kms_providers_name ON kms_providers (name) |
+
+## Engine differences
+
+## Views
+| View | Engine | Flags | File |
+| --- | --- | --- | --- |
+| vw_kms_providers | mysql | algorithm=MERGE, security=INVOKER | [packages\kms-providers\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/kms-providers/schema/040_views.mysql.sql) |
+| vw_kms_providers | postgres |  | [packages\kms-providers\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/kms-providers/schema/040_views.postgres.sql) |
