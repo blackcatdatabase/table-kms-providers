@@ -98,9 +98,9 @@ graph LR
 _No engine differences detected._
 
 ## Constraints Snapshot
+- `provider` – enum
 - `created_at` – default=CURRENT_TIMESTAMP(6)
 - `is_enabled` – default=TRUE
-- `provider` – enum
 
 ## Schema Files
 | File | Engine |
