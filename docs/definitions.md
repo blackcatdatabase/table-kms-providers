@@ -6,12 +6,12 @@ Configured KMS providers. name is UNIQUE.
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
 | created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
-| id | BIGINT | NO |  | Surrogate primary key. |
 | is_enabled | BOOLEAN | NO | TRUE | Whether provider is enabled. |
+| provider | mysql: ENUM('gcp','aws','azure','vault') / postgres: TEXT | NO |  | Provider kind. (enum: gcp, aws, azure, vault) |
 | location | VARCHAR(100) | YES |  | Region or location. |
+| id | BIGINT | NO |  | Surrogate primary key. |
 | name | VARCHAR(100) | NO |  | Display name (UNIQUE). |
 | project_tenant | VARCHAR(150) | YES |  | Project/tenant id. |
-| provider | mysql: ENUM('gcp','aws','azure','vault') / postgres: TEXT | NO |  | Provider kind. (enum: gcp, aws, azure, vault) |
 
 ## Engine Details
 
