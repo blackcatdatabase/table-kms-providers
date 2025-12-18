@@ -1,0 +1,29 @@
+{
+  "tables": {
+    "kms_providers": {
+      "columns": {
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "is_enabled": {
+          "strategy": "passthrough"
+        },
+        "location": {
+          "strategy": "passthrough"
+        },
+        "name": {
+          "strategy": "passthrough"
+        },
+        "project_tenant": {
+          "strategy": "passthrough"
+        },
+        "provider": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
